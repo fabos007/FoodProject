@@ -1,0 +1,23 @@
+{
+  "name": "n",
+  "version": "1.0.0",
+  "main": "js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabos007/FoodProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabos007/FoodProject/issues"
+  },
+  "homepage": "https://github.com/fabos007/FoodProject#readme",
+  "devDependencies": {
+    "json-server": "^0.16.1"
+  },
+  "dependencies": {},
+  "description": ""
+}
