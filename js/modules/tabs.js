@@ -1,7 +1,7 @@
-function tabs() {
-  const tabs = document.querySelectorAll(".tabheader__item"),
-    tabsContent = document.querySelectorAll(".tabcontent"),
-    tabsParent = document.querySelector(".tabheader__items");
+function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass) {
+  const tabs = document.querySelectorAll(tabsSelector),
+    tabsContent = document.querySelectorAll(tabsContentSelector),
+    tabsParent = document.querySelector(tabsParentSelector);
   //Скрывает табы, перебирает массив данных и к каждому елементу добавляет стиль display = 'none'
   function hideTabContent() {
     tabsContent.forEach((item) => {
@@ -11,7 +11,7 @@ function tabs() {
     });
     // также она перебирает все табы и  убирает tabheader__item_active
     tabs.forEach((tab) => {
-      tab.classList.remove("tabheader__item_active");
+      tab.classList.remove(activeClass);
     });
   }
   //функция которая показывет таб -> i это счетчик (номер елемента = 0 дефолтное значение).
@@ -20,7 +20,7 @@ function tabs() {
     tabsContent[i].classList.add("show", "fade");
     tabsContent[i].classList.remove("hide");
     // tabsContent[i].style.display = 'block';
-    tabs[i].classList.add("tabheader__item_active");
+    tabs[i].classList.add(activeClass);
   }
 
   hideTabContent();
@@ -31,7 +31,7 @@ function tabs() {
     const target = event.target; // определяет куда было нажато
 
     // делаем проверку, что нажатие было по табу, а не в пустое место
-    if (target && target.classList.contains("tabheader__item")) {
+    if (target && target.classList.contains(tabsSelector.slice(1))) {
       /* делаем перебор псевдомассива. Нужно определить номер таба на который нажали. 
               Во время перебора в переменной Tabs, если елемент этого псевдомассива 
               равен тому на что кликнул пользовательб то мы берем его номер и показываем на странице */
